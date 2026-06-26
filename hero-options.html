@@ -3,138 +3,208 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Leather Sage — Hero Options</title>
+<title>The Leather Sage — Choose Your Homepage</title>
+<meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --obsidian:#14100C;--espresso:#2A2018;--brass:#C2A04E;--camel:#C2885A;
-    --amethyst:#7A5E86;--parchment:#EDE4D3;--bone:#F5EFE3;
+    --amethyst:#7A5E86;--carnelian:#A6492C;--parchment:#EDE4D3;--bone:#F5EFE3;--sage:#7E8C63;
     --display:'Cormorant Garamond',serif;--logo:'Cinzel',serif;--body:'Jost',sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{background:#0a0807;color:var(--parchment);font-family:var(--body);font-weight:300;}
   img{display:block;}
-  .label{
-    position:sticky;top:0;z-index:30;background:#0a0807;
-    padding:18px 30px;border-bottom:1px solid rgba(194,160,78,.25);
-    display:flex;align-items:baseline;gap:16px;
-  }
+  a{color:var(--brass);}
+
+  .intro{text-align:center;padding:70px 30px 40px;border-bottom:1px solid rgba(194,160,78,.22);background:radial-gradient(circle at 50% 0%, rgba(122,94,134,.16), transparent 60%),#0a0807;}
+  .intro .wm{font-family:var(--logo);font-size:30px;letter-spacing:.18em;color:var(--bone);}
+  .intro h1{font-family:var(--display);font-style:italic;font-size:34px;color:var(--camel);font-weight:500;margin:18px 0 14px;}
+  .intro p{max-width:60ch;margin:0 auto;font-size:16px;color:rgba(237,228,211,.78);line-height:1.6;}
+  .intro .hint{margin-top:18px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);}
+
+  .label{position:sticky;top:0;z-index:40;background:#0a0807;padding:16px 30px;border-bottom:1px solid rgba(194,160,78,.25);display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;}
   .label .n{font-family:var(--logo);font-size:15px;letter-spacing:.2em;color:var(--brass);}
-  .label .d{font-size:14px;color:rgba(237,228,211,.7);}
-  .label .pick{margin-left:auto;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);border:1px solid rgba(194,160,78,.5);padding:7px 16px;border-radius:2px;}
-  .nav{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:26px 48px;}
-  .nav .wm{font-family:var(--logo);font-size:26px;letter-spacing:.16em;color:var(--bone);}
-  .nav .lk{display:flex;gap:30px;font-size:18px;letter-spacing:.12em;text-transform:uppercase;color:var(--parchment);}
-  .eyebrow{text-transform:uppercase;letter-spacing:.42em;font-size:12px;color:var(--brass);margin-bottom:24px;}
-  h1{font-family:var(--display);font-weight:500;font-size:clamp(48px,7vw,86px);line-height:1.05;color:var(--bone);}
-  .sub{font-family:var(--display);font-style:italic;font-size:21px;color:rgba(237,228,211,.85);max-width:32ch;line-height:1.5;margin-top:22px;}
-  .cta{margin-top:34px;display:flex;gap:16px;}
-  .btn{font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:14px 30px;border-radius:2px;}
+  .label .nm{font-family:var(--display);font-style:italic;font-size:20px;color:var(--bone);}
+  .label .d{font-size:14px;color:rgba(237,228,211,.65);}
+
+  .nav{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:24px 46px;}
+  .nav .wm{font-family:var(--logo);font-size:24px;letter-spacing:.16em;color:var(--bone);}
+  .nav .lk{display:flex;gap:28px;font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--parchment);}
+  .eyebrow{text-transform:uppercase;letter-spacing:.42em;font-size:12px;color:var(--brass);margin-bottom:22px;}
+  h2.head{font-family:var(--display);font-weight:500;font-size:clamp(44px,6.5vw,82px);line-height:1.05;color:var(--bone);}
+  .sub{font-family:var(--display);font-style:italic;font-size:20px;color:rgba(237,228,211,.85);max-width:32ch;line-height:1.5;margin-top:20px;}
+  .cta{margin-top:30px;display:flex;gap:16px;}
+  .btn{font-size:13px;letter-spacing:.16em;text-transform:uppercase;padding:13px 28px;border-radius:2px;}
   .btn-p{background:var(--brass);color:var(--obsidian);font-weight:500;}
   .btn-g{border:1px solid rgba(194,160,78,.55);color:var(--parchment);}
+  .stage{position:relative;height:80vh;min-height:560px;overflow:hidden;background:var(--obsidian);}
 
-  /* ---------- OPTION 1 — faded montage ---------- */
-  .o1{position:relative;height:88vh;min-height:620px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--obsidian);}
-  .o1 .montage{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:50%;opacity:.30;}
-  .o1 .montage img{width:100%;height:100%;object-fit:cover;}
-  .o1 .veil{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%, rgba(20,16,12,.55), rgba(10,8,7,.92));}
-  .o1 .inner{position:relative;z-index:10;max-width:760px;padding:0 24px;}
+  /* 1 — montage */
+  .s1{display:flex;align-items:center;justify-content:center;text-align:center;}
+  .s1 .montage{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:50%;opacity:.30;}
+  .s1 .montage img{width:100%;height:100%;object-fit:cover;}
+  .s1 .veil{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%, rgba(20,16,12,.5), rgba(10,8,7,.93));}
+  .s1 .inner{position:relative;z-index:10;max-width:740px;padding:0 24px;}
 
-  /* ---------- OPTION 2 — split ---------- */
-  .o2{position:relative;min-height:620px;height:88vh;display:grid;grid-template-columns:1.05fr 1fr;background:linear-gradient(120deg,#14100C 40%,#1c150e);}
-  .o2 .txt{display:flex;flex-direction:column;justify-content:center;padding:0 64px;}
-  .o2 .casc{position:relative;overflow:hidden;padding:18px;}
-  .o2 .casc .col{position:absolute;top:0;width:46%;display:flex;flex-direction:column;gap:16px;padding:16px 0;}
-  .o2 .casc .c1{left:3%;transform:translateY(-4%);}
-  .o2 .casc .c2{right:3%;transform:translateY(8%);}
-  .o2 .casc img{width:100%;border-radius:3px;border:1px solid rgba(194,160,78,.2);object-fit:cover;}
+  /* 2 — split */
+  .s2{display:grid;grid-template-columns:1.05fr 1fr;background:linear-gradient(120deg,#14100C 42%,#1c150e);}
+  .s2 .txt{display:flex;flex-direction:column;justify-content:center;padding:0 60px;}
+  .s2 .casc{position:relative;overflow:hidden;}
+  .s2 .casc .col{position:absolute;top:0;width:46%;display:flex;flex-direction:column;gap:16px;padding:16px 0;}
+  .s2 .casc .c1{left:3%;transform:translateY(-4%);}
+  .s2 .casc .c2{right:3%;transform:translateY(8%);}
+  .s2 .casc img{width:100%;border-radius:3px;border:1px solid rgba(194,160,78,.2);}
 
-  /* ---------- OPTION 3 — full-bleed ---------- */
-  .o3{position:relative;height:88vh;min-height:620px;overflow:hidden;display:flex;align-items:center;background:#000;}
-  .o3 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-  .o3 .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,8,7,.92) 30%,rgba(10,8,7,.45) 70%, rgba(10,8,7,.7));}
-  .o3 .inner{position:relative;z-index:10;padding:0 64px;max-width:680px;}
-  /* cascade strip under option 3 */
-  .strip{display:flex;gap:14px;padding:22px 30px;background:#0f0b08;overflow:hidden;}
-  .strip img{height:150px;width:auto;border-radius:3px;border:1px solid rgba(194,160,78,.18);object-fit:cover;}
+  /* 3 — full bleed */
+  .s3{display:flex;align-items:center;}
+  .s3 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .s3 .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,8,7,.92) 30%,rgba(10,8,7,.45) 70%,rgba(10,8,7,.72));}
+  .s3 .inner{position:relative;z-index:10;padding:0 60px;max-width:660px;}
 
-  .foot{padding:40px;text-align:center;color:rgba(237,228,211,.6);font-size:15px;border-top:1px solid rgba(194,160,78,.2);}
-  @media(max-width:760px){.o2{grid-template-columns:1fr;}.o2 .casc{display:none;}.nav .lk{display:none;}}
+  /* 4 — slideshow */
+  .s4{display:flex;align-items:flex-end;}
+  .s4 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease;}
+  .s4 .slide.on{opacity:1;}
+  .s4 .slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);transition:transform 7s ease;}
+  .s4 .slide.on img{transform:scale(1);}
+  .s4 .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,7,.55),rgba(10,8,7,.35) 45%,rgba(10,8,7,.92));}
+  .s4 .inner{position:relative;z-index:10;padding:0 60px 64px;max-width:720px;}
+
+  /* 5 — mosaic */
+  .s5{background:#14100C;display:grid;grid-template-columns:1.3fr 1fr;}
+  .s5 .grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:10px;padding:10px;}
+  .s5 .grid img{width:100%;height:100%;object-fit:cover;border-radius:2px;}
+  .s5 .grid img:first-child{grid-row:span 2;}
+  .s5 .txt{display:flex;flex-direction:column;justify-content:center;padding:0 56px;background:linear-gradient(120deg,#1c150e,#14100C);}
+
+  /* 6 — portrait feature */
+  .s6{background:radial-gradient(circle at 80% 50%, rgba(122,94,134,.18), transparent 55%),#14100C;display:grid;grid-template-columns:1fr 0.9fr;align-items:center;}
+  .s6 .txt{padding:0 40px 0 64px;}
+  .s6 .frame{position:relative;height:80vh;display:flex;align-items:center;justify-content:center;padding:40px;}
+  .s6 .frame img{height:100%;width:auto;max-width:100%;object-fit:cover;border:1px solid rgba(194,160,78,.5);border-radius:3px;}
+  .s6 .dot{position:absolute;top:48px;right:60px;width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#9C7BA8,#5C4568);border:2px solid var(--brass);}
+
+  .foot{text-align:center;padding:56px 30px 80px;border-top:1px solid rgba(194,160,78,.22);}
+  .foot h3{font-family:var(--display);font-style:italic;font-size:26px;color:var(--bone);font-weight:500;margin-bottom:12px;}
+  .foot p{max-width:54ch;margin:0 auto;font-size:15px;color:rgba(237,228,211,.7);}
+  @media(max-width:780px){.s2,.s5,.s6{grid-template-columns:1fr;}.s2 .casc,.s5 .grid,.s6 .frame{display:none;}.nav .lk{display:none;}.s1 .montage{grid-template-columns:repeat(2,1fr);grid-auto-rows:25%;}}
 </style>
 </head>
 <body>
 
-<!-- OPTION 1 -->
-<div class="label"><span class="n">OPTION 1</span><span class="d">Faded photo montage behind the headline — moody, immersive, text stays the hero.</span><span class="pick">Reply "Option 1"</span></div>
-<section class="o1">
+<div class="intro">
+  <div class="wm">THE LEATHER SAGE</div>
+  <h1>Choose the homepage you love</h1>
+  <p>Six directions for your website's first screen — all built with your real photos. Scroll through, and just tell Guy the number (or the name) you like best. Mixing pieces of two is totally fine.</p>
+  <div class="hint">Scroll to explore · 6 styles</div>
+</div>
+
+<!-- 1 -->
+<div class="label"><span class="n">01</span><span class="nm">Faded Montage</span><span class="d">A soft grid of your work glows behind the headline. Immersive and moody.</span></div>
+<section class="stage s1">
   <div class="montage">
-    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-1.jpg" alt="">
-    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/sage-portrait.jpg" alt="">
-    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-4.jpg" alt="">
-    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-2.jpg" alt="">
-    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-6.jpg" alt="">
-    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-3.jpg" alt="">
-    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-5.jpg" alt="">
-    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-1.jpg" alt="">
+    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-1.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/sage-portrait.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-4.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-2.jpg" alt="">
+    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-6.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-3.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-5.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-1.jpg" alt="">
   </div>
   <div class="veil"></div>
   <nav class="nav"><span class="wm">THE LEATHER SAGE</span><span class="lk">STORY GALLERY SHOP CONTACT</span></nav>
   <div class="inner">
     <div class="eyebrow">Asheville, North Carolina</div>
-    <h1>Wearable art,<br>forged by hand.</h1>
-    <div class="sub" style="margin-left:auto;margin-right:auto;">One-of-a-kind, gemstone-set leather adornments inspired by the natural world.</div>
+    <h2 class="head">Wearable art,<br>forged by hand.</h2>
+    <div class="sub" style="margin:20px auto 0;">One-of-a-kind, gemstone-set leather adornments inspired by the natural world.</div>
     <div class="cta" style="justify-content:center;"><span class="btn btn-p">Commission a Piece</span><span class="btn btn-g">Book Sage</span></div>
   </div>
 </section>
 
-<!-- OPTION 2 -->
-<div class="label"><span class="n">OPTION 2</span><span class="d">Split layout — headline beside a staggered cascade of work + personal shots.</span><span class="pick">Reply "Option 2"</span></div>
-<section class="o2">
+<!-- 2 -->
+<div class="label"><span class="n">02</span><span class="nm">Split Cascade</span><span class="d">Headline beside a staggered cascade of work and personal shots.</span></div>
+<section class="stage s2">
   <div class="txt">
     <div class="eyebrow">Asheville, North Carolina</div>
-    <h1>Wearable art,<br>forged by hand.</h1>
-    <div class="sub">One-of-a-kind, gemstone-set leather adornments inspired by the natural world. Hand-cut, tooled, and set with love.</div>
+    <h2 class="head">Wearable art,<br>forged by hand.</h2>
+    <div class="sub">Gemstone-set leather adornments, hand-cut and set with love.</div>
     <div class="cta"><span class="btn btn-p">Commission a Piece</span><span class="btn btn-g">Book Sage</span></div>
   </div>
   <div class="casc">
-    <div class="col c1">
-      <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-1.jpg" alt="">
-      <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-3.jpg" alt="">
-      <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-5.jpg" alt="">
-    </div>
-    <div class="col c2">
-      <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/sage-portrait.jpg" alt="">
-      <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-4.jpg" alt="">
-      <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-6.jpg" alt="">
-    </div>
+    <div class="col c1"><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-1.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-3.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-5.jpg" alt=""></div>
+    <div class="col c2"><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/sage-portrait.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-4.jpg" alt=""><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-6.jpg" alt=""></div>
   </div>
 </section>
 
-<!-- OPTION 3 -->
-<div class="label"><span class="n">OPTION 3</span><span class="d">Full-bleed photo hero, then a cascading photo strip flowing down the page.</span><span class="pick">Reply "Option 3"</span></div>
-<section class="o3">
+<!-- 3 -->
+<div class="label"><span class="n">03</span><span class="nm">Full-Bleed Photo</span><span class="d">One striking piece fills the screen behind the text.</span></div>
+<section class="stage s3">
   <img class="bg" src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-1.jpg" alt="">
   <div class="veil"></div>
   <nav class="nav"><span class="wm">THE LEATHER SAGE</span><span class="lk">STORY GALLERY SHOP CONTACT</span></nav>
   <div class="inner">
     <div class="eyebrow">Asheville, North Carolina</div>
-    <h1>Wearable art,<br>forged by hand.</h1>
-    <div class="sub">One-of-a-kind, gemstone-set leather adornments inspired by the natural world.</div>
+    <h2 class="head">Wearable art,<br>forged by hand.</h2>
+    <div class="sub">One-of-a-kind, gemstone-set leather adornments.</div>
     <div class="cta"><span class="btn btn-p">Commission a Piece</span><span class="btn btn-g">Book Sage</span></div>
   </div>
 </section>
-<div class="strip">
-  <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/sage-portrait.jpg" alt="">
-  <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-2.jpg" alt="">
-  <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-4.jpg" alt="">
-  <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-6.jpg" alt="">
-  <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-3.jpg" alt="">
-  <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-5.jpg" alt="">
+
+<!-- 4 -->
+<div class="label"><span class="n">04</span><span class="nm">Slow Slideshow</span><span class="d">Your photos crossfade with a gentle zoom behind the text. Alive and cinematic.</span></div>
+<section class="stage s4" id="slideshow">
+  <div class="slide on"><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-1.jpg" alt=""></div>
+  <div class="slide"><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-4.jpg" alt=""></div>
+  <div class="slide"><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-6.jpg" alt=""></div>
+  <div class="slide"><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/sage-portrait.jpg" alt=""></div>
+  <div class="veil"></div>
+  <nav class="nav"><span class="wm">THE LEATHER SAGE</span><span class="lk">STORY GALLERY SHOP CONTACT</span></nav>
+  <div class="inner">
+    <div class="eyebrow">Asheville, North Carolina</div>
+    <h2 class="head">Wearable art,<br>forged by hand.</h2>
+    <div class="sub">Gemstone-set leather adornments inspired by the natural world.</div>
+    <div class="cta"><span class="btn btn-p">Commission a Piece</span><span class="btn btn-g">Book Sage</span></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<div class="label"><span class="n">05</span><span class="nm">Gallery Mosaic</span><span class="d">A tight grid of pieces beside a clean text panel. Editorial and bold.</span></div>
+<section class="stage s5">
+  <div class="grid">
+    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-1.jpg" alt="">
+    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-3.jpg" alt="">
+    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-6.jpg" alt="">
+    <img src="https://guyrstewart-sudo.github.io/theleathersage/assets/work-2.jpg" alt="">
+  </div>
+  <div class="txt">
+    <div class="eyebrow">Asheville, NC</div>
+    <h2 class="head" style="font-size:clamp(38px,4.5vw,64px)">Wearable art,<br>forged by hand.</h2>
+    <div class="sub">One of a kind, always.</div>
+    <div class="cta"><span class="btn btn-p">Commission a Piece</span><span class="btn btn-g">Book Sage</span></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<div class="label"><span class="n">06</span><span class="nm">Portrait Feature</span><span class="d">Leads with Sage — a framed portrait beside the headline. Personal-forward.</span></div>
+<section class="stage s6">
+  <div class="txt">
+    <div class="eyebrow">Asheville, North Carolina</div>
+    <h2 class="head">Meet the maker.</h2>
+    <div class="sub">Hand-cut, gemstone-set leather adornments — created and worn by Sage Holmes.</div>
+    <div class="cta"><span class="btn btn-p">Commission a Piece</span><span class="btn btn-g">Book Sage</span></div>
+  </div>
+  <div class="frame"><div class="dot"></div><img src="https://guyrstewart-sudo.github.io/theleathersage/assets/sage-portrait.jpg" alt="Sage Holmes"></div>
+</section>
+
+<div class="foot">
+  <h3>Which one feels like you?</h3>
+  <p>Tell Guy the number or name you love most — Faded Montage, Split Cascade, Full-Bleed, Slow Slideshow, Gallery Mosaic, or Portrait Feature. He'll build it into your live site, and we can pull in more of your photos to fill it out.</p>
 </div>
 
-<div class="foot">Three directions for the hero — all use Sage's real photos. Tell me the number you like (or mix &amp; match), and I'll build it into the live site and cascade more personal + work shots down the page.</div>
-
+<script>
+(function(){
+  var slides=document.querySelectorAll('#slideshow .slide');
+  if(!slides.length)return;var i=0;
+  setInterval(function(){slides[i].classList.remove('on');i=(i+1)%slides.length;slides[i].classList.add('on');},3200);
+})();
+</script>
 </body>
 </html>
