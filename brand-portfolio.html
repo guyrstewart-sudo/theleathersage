@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Leather Sage — Brand Portfolio Book</title>
+<meta name="description" content="The brand portfolio book for The Leather Sage: brand story, positioning, voice, color, typography, and identity for Sage Holmes' handcrafted gemstone leather adornments.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --obsidian:#14100C;
+    --espresso:#2A2018;
+    --espresso-soft:#352a20;
+    --saddle:#9A6A43;
+    --camel:#C2885A;
+    --brass:#C2A04E;
+    --brass-deep:#A8863A;
+    --amethyst:#7A5E86;
+    --carnelian:#A6492C;
+    --parchment:#EDE4D3;
+    --bone:#F5EFE3;
+    --sage:#7E8C63;
+    --ink:#1d1813;
+    --display:'Cormorant Garamond', Georgia, serif;
+    --logo:'Cinzel', serif;
+    --body:'Jost', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    background:var(--obsidian);
+    color:var(--parchment);
+    line-height:1.6;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:920px;
+    margin:0 auto;
+    padding:90px 64px;
+    border-bottom:1px solid rgba(194,160,78,.14);
+    position:relative;
+  }
+  .eyebrow{
+    font-family:var(--body);
+    text-transform:uppercase;
+    letter-spacing:.42em;
+    font-size:11px;
+    font-weight:500;
+    color:var(--brass);
+    margin-bottom:26px;
+  }
+  h1,h2,h3{font-family:var(--display);font-weight:500;line-height:1.1;}
+  h2.section-title{font-size:46px;color:var(--bone);margin-bottom:8px;letter-spacing:.5px;}
+  h3{font-size:24px;color:var(--camel);margin:34px 0 12px;}
+  p{font-size:16.5px;color:rgba(237,228,211,.86);margin-bottom:16px;max-width:62ch;}
+  p.lead{font-family:var(--display);font-size:24px;font-style:italic;color:var(--bone);line-height:1.5;max-width:30ch;}
+  em{color:var(--camel);font-style:italic;}
+  strong{color:var(--bone);font-weight:500;}
+  a{color:var(--brass);}
+
+  /* ---------- COVER ---------- */
+  .cover{
+    min-height:100vh;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    text-align:center;
+    background:
+      radial-gradient(circle at 50% 32%, rgba(122,94,134,.18), transparent 55%),
+      radial-gradient(circle at 50% 80%, rgba(166,73,44,.12), transparent 50%),
+      linear-gradient(160deg,#14100C 0%, #221a13 55%, #14100C 100%);
+    border-bottom:1px solid rgba(194,160,78,.25);
+    padding:64px;
+  }
+  .logo-lockup{display:flex;flex-direction:column;align-items:center;gap:22px;}
+  .mark{width:108px;height:108px;}
+  .wordmark{
+    font-family:var(--logo);
+    font-size:46px;
+    letter-spacing:.14em;
+    color:var(--bone);
+    font-weight:500;
+    line-height:1.05;
+  }
+  .wordmark .the{display:block;font-size:18px;letter-spacing:.6em;color:var(--brass);margin-bottom:8px;padding-left:.6em;}
+  .cover .tagline{
+    font-family:var(--display);
+    font-style:italic;
+    font-size:23px;
+    color:var(--camel);
+    margin-top:30px;
+    letter-spacing:.5px;
+  }
+  .cover .meta{
+    margin-top:54px;
+    font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:rgba(237,228,211,.5);
+  }
+  .rule{width:60px;height:1px;background:var(--brass);margin:30px auto;opacity:.6;}
+
+  /* ---------- TOC ---------- */
+  .toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px 48px;margin-top:30px;}
+  .toc-item{display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid rgba(194,160,78,.12);}
+  .toc-num{font-family:var(--display);font-size:20px;color:var(--brass);min-width:34px;}
+  .toc-label{font-size:15px;letter-spacing:.04em;color:rgba(237,228,211,.85);}
+
+  /* ---------- GENERIC ---------- */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:46px;margin-top:30px;}
+  .card{
+    background:linear-gradient(160deg, rgba(53,42,32,.6), rgba(20,16,12,.4));
+    border:1px solid rgba(194,160,78,.16);
+    border-radius:4px;
+    padding:28px 30px;
+  }
+  .card h3{margin-top:0;}
+  ul.clean{list-style:none;margin:10px 0;}
+  ul.clean li{position:relative;padding-left:22px;margin-bottom:11px;font-size:16px;color:rgba(237,228,211,.85);}
+  ul.clean li::before{content:'';position:absolute;left:0;top:10px;width:7px;height:7px;background:var(--brass);transform:rotate(45deg);}
+
+  /* ---------- COLOR SWATCHES ---------- */
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;}
+  .swatch{border-radius:4px;overflow:hidden;border:1px solid rgba(255,255,255,.06);}
+  .swatch .chip{height:104px;}
+  .swatch .info{padding:12px 14px;background:var(--espresso);}
+  .swatch .name{font-size:13px;color:var(--bone);font-weight:500;letter-spacing:.02em;}
+  .swatch .hex{font-size:11.5px;color:var(--brass);letter-spacing:.08em;margin-top:3px;font-family:var(--body);}
+  .swatch .role{font-size:11px;color:rgba(237,228,211,.5);margin-top:5px;line-height:1.4;}
+
+  /* ---------- TYPE SPECIMEN ---------- */
+  .type-spec{border:1px solid rgba(194,160,78,.16);border-radius:4px;padding:30px 32px;margin-top:22px;background:rgba(20,16,12,.4);}
+  .type-spec .big{font-family:var(--display);font-size:58px;color:var(--bone);line-height:1;}
+  .type-spec .label{font-size:11px;text-transform:uppercase;letter-spacing:.3em;color:var(--brass);margin-bottom:14px;}
+  .type-spec .alpha{font-size:18px;color:rgba(237,228,211,.7);letter-spacing:.04em;margin-top:14px;}
+
+  /* ---------- VOICE ---------- */
+  .voice-cols{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:26px;}
+  .voice-cols .col{padding:24px 26px;border-radius:4px;}
+  .voice-do{background:rgba(126,140,99,.12);border:1px solid rgba(126,140,99,.35);}
+  .voice-dont{background:rgba(166,73,44,.10);border:1px solid rgba(166,73,44,.30);}
+  .voice-cols h4{font-family:var(--display);font-size:22px;margin-bottom:14px;}
+  .voice-do h4{color:var(--sage);}
+  .voice-dont h4{color:var(--carnelian);}
+  blockquote{
+    font-family:var(--display);font-style:italic;font-size:21px;color:var(--bone);
+    border-left:2px solid var(--brass);padding:6px 0 6px 26px;margin:24px 0;line-height:1.5;max-width:52ch;
+  }
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px;}
+  .pillar{text-align:center;padding:26px 18px;border:1px solid rgba(194,160,78,.16);border-radius:4px;background:rgba(20,16,12,.4);}
+  .pillar .pmark{font-family:var(--display);font-size:30px;color:var(--brass);margin-bottom:8px;}
+  .pillar .pname{font-family:var(--display);font-size:21px;color:var(--bone);margin-bottom:8px;}
+  .pillar p{font-size:14px;margin:0 auto;color:rgba(237,228,211,.72);}
+
+  .taglines{margin-top:24px;}
+  .taglines .tl{font-family:var(--display);font-style:italic;font-size:25px;color:var(--bone);padding:14px 0;border-bottom:1px dashed rgba(194,160,78,.2);}
+  .taglines .tl span{font-style:normal;font-family:var(--body);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);display:block;margin-top:4px;}
+
+  .offer-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:28px;}
+  .offer{border:1px solid rgba(194,160,78,.16);border-radius:4px;padding:26px 28px;background:linear-gradient(160deg, rgba(53,42,32,.5), rgba(20,16,12,.35));}
+  .offer .tag{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--brass);}
+  .offer h3{margin:8px 0 10px;color:var(--bone);}
+  .offer .price{font-family:var(--display);font-style:italic;color:var(--camel);font-size:17px;margin-top:10px;}
+
+  .footer{text-align:center;padding:70px 64px 90px;background:var(--obsidian);}
+  .footer .wordmark{font-size:26px;}
+  .footer .mark{width:64px;height:64px;margin:0 auto 18px;}
+  .footer p{margin:0 auto;color:rgba(237,228,211,.6);font-size:14px;}
+
+  @media print{
+    body{background:#fff;color:#1d1813;}
+    .page{page-break-after:always;border:none;max-width:100%;padding:48px;}
+    .cover{min-height:auto;background:#14100C;color:#EDE4D3;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+    .chip,.swatch,.cover,.pillar,.card,.offer,.type-spec{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+  @media(max-width:760px){
+    .page{padding:60px 26px;}
+    .two-col,.voice-cols,.offer-grid,.toc-grid{grid-template-columns:1fr;gap:24px;}
+    .swatches{grid-template-columns:repeat(2,1fr);}
+    .pillars{grid-template-columns:1fr;}
+    h2.section-title{font-size:36px;}
+    .wordmark{font-size:34px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="cover">
+  <div class="logo-lockup">
+    <svg class="mark" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="The Leather Sage mark">
+      <circle cx="60" cy="60" r="57" stroke="#C2A04E" stroke-width="1.4" opacity="0.55"/>
+      <circle cx="60" cy="60" r="48" stroke="#C2A04E" stroke-width="0.7" opacity="0.3"/>
+      <!-- cabochon gemstone -->
+      <ellipse cx="60" cy="60" rx="15" ry="20" fill="#7A5E86"/>
+      <ellipse cx="60" cy="60" rx="15" ry="20" fill="url(#g)" opacity="0.9"/>
+      <ellipse cx="55" cy="52" rx="4" ry="6" fill="#C9AAD6" opacity="0.7"/>
+      <!-- leaf flanks -->
+      <path d="M60 40 C44 30 36 44 38 60 C50 56 58 50 60 40Z" fill="#7E8C63" opacity="0.9"/>
+      <path d="M60 40 C76 30 84 44 82 60 C70 56 62 50 60 40Z" fill="#9A6A43" opacity="0.9"/>
+      <path d="M60 80 C50 92 60 100 60 100 C60 100 70 92 60 80Z" fill="#C2A04E"/>
+      <line x1="60" y1="40" x2="60" y2="100" stroke="#14100C" stroke-width="1" opacity="0.4"/>
+      <defs>
+        <linearGradient id="g" x1="45" y1="40" x2="75" y2="80" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#9C7BA8"/><stop offset="1" stop-color="#5C4568"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div class="wordmark"><span class="the">THE</span>LEATHER SAGE</div>
+  </div>
+  <div class="tagline">Leather adornments inspired by the natural world.</div>
+  <div class="rule"></div>
+  <div class="meta">Brand Portfolio Book · Asheville, North Carolina · Est. by Sage Holmes</div>
+</section>
+
+<!-- ============ TOC ============ -->
+<section class="page">
+  <div class="eyebrow">Contents</div>
+  <h2 class="section-title">Inside the Book</h2>
+  <div class="toc-grid">
+    <div class="toc-item"><span class="toc-num">01</span><span class="toc-label">The Essence</span></div>
+    <div class="toc-item"><span class="toc-num">02</span><span class="toc-label">Brand Story</span></div>
+    <div class="toc-item"><span class="toc-num">03</span><span class="toc-label">Positioning &amp; Promise</span></div>
+    <div class="toc-item"><span class="toc-num">04</span><span class="toc-label">Who It's For</span></div>
+    <div class="toc-item"><span class="toc-num">05</span><span class="toc-label">Brand Pillars</span></div>
+    <div class="toc-item"><span class="toc-num">06</span><span class="toc-label">Voice &amp; Tone</span></div>
+    <div class="toc-item"><span class="toc-num">07</span><span class="toc-label">Logo &amp; Mark</span></div>
+    <div class="toc-item"><span class="toc-num">08</span><span class="toc-label">Color Palette</span></div>
+    <div class="toc-item"><span class="toc-num">09</span><span class="toc-label">Typography</span></div>
+    <div class="toc-item"><span class="toc-num">10</span><span class="toc-label">Art Direction</span></div>
+    <div class="toc-item"><span class="toc-num">11</span><span class="toc-label">Offerings</span></div>
+    <div class="toc-item"><span class="toc-num">12</span><span class="toc-label">Messaging &amp; Taglines</span></div>
+  </div>
+</section>
+
+<!-- ============ 01 ESSENCE ============ -->
+<section class="page">
+  <div class="eyebrow">01 — The Essence</div>
+  <h2 class="section-title">A talisman you can wear</h2>
+  <p class="lead">The Leather Sage makes hand-cut, gemstone-set leather adornments for people who carry meaning on their bodies.</p>
+  <p>Every piece begins with a hide and a stone. From there it is cut, tooled, stitched, and set entirely by hand in a small Asheville studio. The result is wearable art — hip bags cradling charoite, sheaths bound in braided edges, cuffs anchored by carnelian — each one a quiet object of power meant to be lived in, not displayed in a case.</p>
+  <p>This is a brand built on devotion to craft and reverence for the natural world. It speaks softly, makes slowly, and treats every customer as family.</p>
+  <div class="two-col">
+    <div class="card"><h3>Brand essence</h3><p>Earth-rooted, hand-forged adornment — where leather, stone, and intention become something worn.</p></div>
+    <div class="card"><h3>In three words</h3><p style="font-family:var(--display);font-style:italic;font-size:22px;color:var(--bone)">Grounded. Mystical. Devoted.</p></div>
+  </div>
+</section>
+
+<!-- ============ 02 STORY ============ -->
+<section class="page">
+  <div class="eyebrow">02 — Brand Story</div>
+  <h2 class="section-title">Made by hand, given with heart</h2>
+  <p>Sage Holmes works under the name <strong>The Leather Sage</strong> from Asheville, North Carolina — a place where the Blue Ridge fog, the river, and the makers' culture all leave fingerprints on the work. Sage is both the maker and the muse: the same hands that cut and stitch the leather also model the pieces they create.</p>
+  <p>The craft is slow and personal. Commissions move through a custom list, one piece at a time, and each finished work is sent off with genuine gratitude. In Sage's own words about a favorite piece: <em>"I've put so much love into this piece and I hope you feel it every time you wear it."</em> That sentiment is the whole brand in a sentence — the belief that an object made with care carries that care forward.</p>
+  <p>The natural world is the constant source. Leaves, stone, bone, river-worn texture and the deep palette of the forest floor all find their way into the adornments. Nothing is mass-produced; everything is one of a kind.</p>
+  <blockquote>"Creator of leather adornments inspired by the natural world."</blockquote>
+</section>
+
+<!-- ============ 03 POSITIONING ============ -->
+<section class="page">
+  <div class="eyebrow">03 — Positioning &amp; Promise</div>
+  <h2 class="section-title">Where the brand stands</h2>
+  <div class="two-col">
+    <div>
+      <h3>Positioning statement</h3>
+      <p>For free-spirited souls who adorn themselves with intention, <strong>The Leather Sage</strong> is a one-of-a-kind leather atelier that hand-sets gemstones into wearable leather art — because what you wear should be made by human hands, rooted in the earth, and meant to last.</p>
+      <h3>The promise</h3>
+      <p>Every piece is hand-cut, individually made, and finished with a maker's full attention. No two are alike. No piece leaves the studio without love in it.</p>
+    </div>
+    <div>
+      <h3>What makes it different</h3>
+      <ul class="clean">
+        <li>Gemstone cabochons set directly into leather — a signature few makers attempt.</li>
+        <li>One maker, one pair of hands, start to finish.</li>
+        <li>Custom commission model — pieces built around the wearer.</li>
+        <li>Nature-drawn forms and an earthy, mystical sensibility.</li>
+        <li>A founder who both crafts and models the work, embodying the brand.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 AUDIENCE ============ -->
+<section class="page">
+  <div class="eyebrow">04 — Who It's For</div>
+  <h2 class="section-title">The people who wear it</h2>
+  <p>The Leather Sage speaks to people who treat adornment as identity — who would rather own one meaningful, handmade object than ten disposable ones.</p>
+  <div class="two-col">
+    <div class="card">
+      <h3>The Seeker</h3>
+      <p>Drawn to crystals, ritual, and the natural world. Wants objects with meaning and energy, not just function. Values the story behind the maker.</p>
+    </div>
+    <div class="card">
+      <h3>The Maker-Appreciator</h3>
+      <p>Festival and slow-fashion crowd. Collects handmade leather, jewelry, and craft. Will pay a fair price for true one-of-a-kind work.</p>
+    </div>
+    <div class="card">
+      <h3>The Adorned</h3>
+      <p>Expresses identity through what they wear — hip bags, cuffs, harnesses. Wants statement pieces with edge and soul.</p>
+    </div>
+    <div class="card">
+      <h3>The Gift-Giver &amp; Patron</h3>
+      <p>Commissioning something singular for someone they love, or supporting an independent artist whose work they believe in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 PILLARS ============ -->
+<section class="page">
+  <div class="eyebrow">05 — Brand Pillars</div>
+  <h2 class="section-title">What the brand stands on</h2>
+  <div class="pillars">
+    <div class="pillar"><div class="pmark">✦</div><div class="pname">Handcraft</div><p>Cut, tooled, stitched and set by one maker. The hand is always visible in the work.</p></div>
+    <div class="pillar"><div class="pmark">❧</div><div class="pname">Nature</div><p>Forms, textures, and palette drawn from leaf, stone, river, and forest.</p></div>
+    <div class="pillar"><div class="pmark">◈</div><div class="pname">Meaning</div><p>Gemstones and intention turn adornment into talisman — worn, not stored.</p></div>
+  </div>
+  <div style="margin-top:34px"></div>
+  <div class="pillars">
+    <div class="pillar"><div class="pmark">♡</div><div class="pname">Devotion</div><p>Every customer is family; every piece leaves with gratitude and love.</p></div>
+    <div class="pillar"><div class="pmark">✶</div><div class="pname">Singularity</div><p>One of a kind, always. Custom commissions built around the wearer.</p></div>
+    <div class="pillar"><div class="pmark">∞</div><div class="pname">Longevity</div><p>Made from real hide and stone to be lived in and to last for years.</p></div>
+  </div>
+</section>
+
+<!-- ============ 06 VOICE ============ -->
+<section class="page">
+  <div class="eyebrow">06 — Voice &amp; Tone</div>
+  <h2 class="section-title">How the brand speaks</h2>
+  <p>The voice is <strong>warm, soulful, and grounded</strong> — a maker speaking directly and sincerely, never corporate or salesy. It is grateful, a little poetic, and reverent toward both craft and customer. It carries quiet mysticism without tipping into cliché.</p>
+  <div class="voice-cols">
+    <div class="col voice-do">
+      <h4>Do</h4>
+      <ul class="clean">
+        <li>Speak in first person, as the maker.</li>
+        <li>Lead with gratitude and warmth.</li>
+        <li>Use earthy, sensory, natural imagery.</li>
+        <li>Honor the piece, the stone, and the wearer.</li>
+        <li>Be sincere and a touch poetic.</li>
+      </ul>
+    </div>
+    <div class="col voice-dont">
+      <h4>Don't</h4>
+      <ul class="clean">
+        <li>Sound like a big-box retailer.</li>
+        <li>Over-hype, discount, or pressure.</li>
+        <li>Use jargon or hollow buzzwords.</li>
+        <li>Lean on heavy mystical clichés.</li>
+        <li>Treat customers as transactions.</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Voice in practice</h3>
+  <blockquote>"This one took its time. Cut by hand, braided at the edges, and set with a stone I'd been saving for the right piece. It's ready for whoever it's meant to find."</blockquote>
+</section>
+
+<!-- ============ 07 LOGO ============ -->
+<section class="page">
+  <div class="eyebrow">07 — Logo &amp; Mark</div>
+  <h2 class="section-title">The signature</h2>
+  <p>The mark unites the two halves of the brand: a <strong>gemstone cabochon</strong> (the adornment, the meaning) cradled between a <strong>sage leaf and a leather frond</strong> (the natural world, the material), enclosed in a hand-drawn ring. It reads as a seal — a talisman in miniature.</p>
+  <div style="display:flex;gap:50px;align-items:center;flex-wrap:wrap;margin-top:34px;background:linear-gradient(160deg,#1b150f,#14100C);padding:46px;border-radius:4px;border:1px solid rgba(194,160,78,.16)">
+    <svg width="150" height="150" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="60" cy="60" r="57" stroke="#C2A04E" stroke-width="1.4" opacity="0.55"/>
+      <circle cx="60" cy="60" r="48" stroke="#C2A04E" stroke-width="0.7" opacity="0.3"/>
+      <ellipse cx="60" cy="60" rx="15" ry="20" fill="url(#g2)"/>
+      <ellipse cx="55" cy="52" rx="4" ry="6" fill="#C9AAD6" opacity="0.7"/>
+      <path d="M60 40 C44 30 36 44 38 60 C50 56 58 50 60 40Z" fill="#7E8C63"/>
+      <path d="M60 40 C76 30 84 44 82 60 C70 56 62 50 60 40Z" fill="#9A6A43"/>
+      <path d="M60 80 C50 92 60 100 60 100 C60 100 70 92 60 80Z" fill="#C2A04E"/>
+      <defs><linearGradient id="g2" x1="45" y1="40" x2="75" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#9C7BA8"/><stop offset="1" stop-color="#5C4568"/></linearGradient></defs>
+    </svg>
+    <div>
+      <div class="wordmark" style="font-size:38px;text-align:left"><span class="the" style="padding-left:0">THE</span>LEATHER SAGE</div>
+      <p style="margin-top:18px;font-size:14px;color:rgba(237,228,211,.6)">Primary lockup — mark above or beside the Cinzel wordmark.</p>
+    </div>
+  </div>
+  <h3>Usage notes</h3>
+  <ul class="clean">
+    <li>Give the mark clear space equal to the height of the gemstone on all sides.</li>
+    <li>Reverse to bone/parchment on dark; use obsidian on light backgrounds.</li>
+    <li>The seal-ring mark may stand alone as an avatar, favicon, or stamp.</li>
+    <li>Never stretch, recolor the gemstone outside the palette, or add effects.</li>
+  </ul>
+</section>
+
+<!-- ============ 08 COLOR ============ -->
+<section class="page">
+  <div class="eyebrow">08 — Color Palette</div>
+  <h2 class="section-title">Pulled from earth &amp; stone</h2>
+  <p>The palette is the forest floor at dusk: deep leather darks, warm tanned browns, antique brass hardware, and the two signature gemstone accents — amethyst-charoite and carnelian.</p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#14100C"></div><div class="info"><div class="name">Obsidian</div><div class="hex">#14100C</div><div class="role">Primary background, deepest leather</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#2A2018"></div><div class="info"><div class="name">Espresso</div><div class="hex">#2A2018</div><div class="role">Surfaces, cards, panels</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#9A6A43"></div><div class="info"><div class="name">Saddle</div><div class="hex">#9A6A43</div><div class="role">Warm leather mid-tone</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#C2885A"></div><div class="info"><div class="name">Camel</div><div class="hex">#C2885A</div><div class="role">Warm accents, links</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#C2A04E"></div><div class="info"><div class="name">Antique Brass</div><div class="hex">#C2A04E</div><div class="role">Primary accent, hardware, CTAs</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#7A5E86"></div><div class="info"><div class="name">Amethyst</div><div class="hex">#7A5E86</div><div class="role">Signature gemstone accent</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#A6492C"></div><div class="info"><div class="name">Carnelian</div><div class="hex">#A6492C</div><div class="role">Secondary stone accent</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#7E8C63"></div><div class="info"><div class="name">Sage</div><div class="hex">#7E8C63</div><div class="role">Botanical accent, "do" states</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#EDE4D3"></div><div class="info"><div class="name">Parchment</div><div class="hex">#EDE4D3</div><div class="role">Primary text on dark</div></div></div>
+    <div class="swatch"><div class="chip" style="background:#F5EFE3"></div><div class="info"><div class="name">Bone</div><div class="hex">#F5EFE3</div><div class="role">Headlines, highlights</div></div></div>
+  </div>
+</section>
+
+<!-- ============ 09 TYPE ============ -->
+<section class="page">
+  <div class="eyebrow">09 — Typography</div>
+  <h2 class="section-title">The letterforms</h2>
+  <div class="type-spec">
+    <div class="label">Logo / Wordmark — Cinzel</div>
+    <div class="big" style="font-family:'Cinzel',serif;font-size:42px;letter-spacing:.12em">LEATHER SAGE</div>
+    <div class="alpha" style="font-family:'Cinzel',serif">An engraved, talismanic serif — reserved for the wordmark and seals.</div>
+  </div>
+  <div class="type-spec">
+    <div class="label">Display &amp; Headings — Cormorant Garamond</div>
+    <div class="big">Wearable art, hand-forged.</div>
+    <div class="alpha">ABCDEFGHIJKLM · abcdefghijklm · 1234567890 · italics for warmth</div>
+  </div>
+  <div class="type-spec">
+    <div class="label">Body &amp; Interface — Jost</div>
+    <div style="font-family:'Jost',sans-serif;font-size:17px;color:rgba(237,228,211,.85);line-height:1.7">A clean geometric sans for body copy, navigation, and product details. It keeps the interface calm and modern so the craft and imagery stay the focus. Light to medium weights only.</div>
+    <div class="alpha" style="font-family:'Jost',sans-serif">ABCDEFGHIJKLM · abcdefghijklm · 1234567890</div>
+  </div>
+</section>
+
+<!-- ============ 10 ART DIRECTION ============ -->
+<section class="page">
+  <div class="eyebrow">10 — Art Direction</div>
+  <h2 class="section-title">How the work is shown</h2>
+  <div class="two-col">
+    <div>
+      <h3>Photography</h3>
+      <ul class="clean">
+        <li>Natural light; warm, low, moody. Shadows welcome.</li>
+        <li>Texture-forward — show grain, stitch, stone, and patina up close.</li>
+        <li>Raw, earthy backdrops: weathered wood, stone, hide, foliage.</li>
+        <li>On-body shots that show the piece worn and alive.</li>
+        <li>Let the gemstone be the focal jewel of the frame.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Layout &amp; feel</h3>
+      <ul class="clean">
+        <li>Dark canvas, generous negative space, slow pacing.</li>
+        <li>Brass hairline rules and seal motifs as quiet detail.</li>
+        <li>One hero image at a time — gallery, not grid-spam.</li>
+        <li>Type restrained; imagery does the talking.</li>
+        <li>Every screen should feel like the inside of the studio.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 OFFERINGS ============ -->
+<section class="page">
+  <div class="eyebrow">11 — Offerings</div>
+  <h2 class="section-title">What's made &amp; sold</h2>
+  <div class="offer-grid">
+    <div class="offer"><div class="tag">Custom Leatherwork</div><h3>Hip Bags &amp; Pouches</h3><p>Hand-cut belt and leg bags set with gemstone cabochons and braided edges.</p><div class="price">Commission · from $250</div></div>
+    <div class="offer"><div class="tag">Custom Leatherwork</div><h3>Sheaths &amp; Wraps</h3><p>Knife sheaths and tool wraps, tooled and stitched to the blade.</p><div class="price">Commission · from $120</div></div>
+    <div class="offer"><div class="tag">Custom Leatherwork</div><h3>Cuffs &amp; Adornments</h3><p>Statement cuffs and body pieces anchored by a single stone.</p><div class="price">Commission · from $85</div></div>
+    <div class="offer"><div class="tag">Custom Leatherwork</div><h3>Harnesses &amp; Bags</h3><p>Larger commissioned works — harnesses, backpacks, one-off statement pieces.</p><div class="price">Commission · from $400</div></div>
+    <div class="offer" style="grid-column:1 / -1;background:linear-gradient(160deg,rgba(122,94,134,.18),rgba(20,16,12,.4));border-color:rgba(122,94,134,.4)"><div class="tag" style="color:var(--amethyst)">Modeling &amp; Collaboration</div><h3>Book Sage</h3><p>Sage Holmes is available for modeling and creative collaboration — shoots, lookbooks, and brand work. Booking and scheduling handled directly through the site.</p><div class="price" style="color:var(--amethyst)">By appointment · rates on request</div></div>
+  </div>
+  <p style="margin-top:20px;font-size:13px;color:rgba(237,228,211,.5)">Price ranges shown are placeholder starting points for the storefront — confirm with Sage before launch.</p>
+</section>
+
+<!-- ============ 12 MESSAGING ============ -->
+<section class="page">
+  <div class="eyebrow">12 — Messaging &amp; Taglines</div>
+  <h2 class="section-title">The words that carry it</h2>
+  <div class="taglines">
+    <div class="tl">Leather adornments inspired by the natural world.<span>Primary — from Sage's own bio</span></div>
+    <div class="tl">Wearable art, forged by hand in leather and stone.<span>Descriptive</span></div>
+    <div class="tl">A talisman you can wear.<span>Short / social</span></div>
+    <div class="tl">One maker. One hide. One of a kind.<span>Craft emphasis</span></div>
+    <div class="tl">Adorn yourself with intention.<span>Call to the audience</span></div>
+  </div>
+  <h3>Boilerplate</h3>
+  <p>The Leather Sage is a one-of-a-kind leather atelier in Asheville, North Carolina, creating gemstone-set leather adornments inspired by the natural world. Every hip bag, sheath, and cuff is hand-cut, tooled, and set by maker Sage Holmes — wearable art made slowly, by hand, and sent off with love.</p>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <svg class="mark" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="60" cy="60" r="57" stroke="#C2A04E" stroke-width="1.4" opacity="0.55"/>
+    <ellipse cx="60" cy="60" rx="15" ry="20" fill="#7A5E86"/>
+    <path d="M60 40 C44 30 36 44 38 60 C50 56 58 50 60 40Z" fill="#7E8C63"/>
+    <path d="M60 40 C76 30 84 44 82 60 C70 56 62 50 60 40Z" fill="#9A6A43"/>
+    <path d="M60 80 C50 92 60 100 60 100 C60 100 70 92 60 80Z" fill="#C2A04E"/>
+  </svg>
+  <div class="wordmark">THE LEATHER SAGE</div>
+  <p style="margin-top:14px">Brand Portfolio Book · Asheville, NC · @theleathersage</p>
+</footer>
+
+</body>
+</html>
