@@ -213,7 +213,11 @@ section{padding:110px 40px;}
   .gallery-grid{columns:2;}
 }
 @media(max-width:680px){
-  .nav{padding:16px 22px;}
+  .nav{padding:14px 18px;}
+  .nav-brand{gap:9px;min-width:0;}
+  .nav-mark{width:38px;height:38px;}
+  .nav-word{font-size:19px;letter-spacing:.1em;}
+  .nav-toggle{flex:none;}
   .nav-links{
     position:fixed;top:64px;right:0;left:0;flex-direction:column;gap:0;
     background:rgba(14,11,8,.98);border-bottom:1px solid rgba(194,160,78,.2);
@@ -226,4 +230,8 @@ section{padding:110px 40px;}
   section{padding:80px 22px;}
   .gallery-grid{columns:1;}
   .hero{padding:120px 22px 70px;}
+}
+@media(max-width:380px){
+  .nav-word{font-size:16px;letter-spacing:.08em;}
+  .nav-mark{width:32px;height:32px;}
 }
