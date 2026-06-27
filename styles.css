@@ -96,8 +96,8 @@ img{max-width:100%;display:block;}
 
 /* ---------- MARQUEE ---------- */
 .marquee{background:var(--espresso);border-block:1px solid rgba(194,160,78,.18);overflow:hidden;padding:16px 0;}
-.marquee-track{display:inline-flex;gap:32px;white-space:nowrap;animation:scroll 28s linear infinite;}
-.marquee-track span{font-family:var(--display);font-style:italic;font-size:20px;color:var(--camel);}
+.marquee-track{display:inline-flex;white-space:nowrap;animation:scroll 100s linear infinite;will-change:transform;}
+.marquee-track span{font-family:var(--display);font-style:italic;font-size:20px;color:var(--camel);padding:0 16px;}
 .marquee-track span:nth-child(2n){color:var(--brass);font-style:normal;}
 @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
